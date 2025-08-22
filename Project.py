@@ -1,35 +1,33 @@
-print("==== WELCOME TO POLICE STATION ====")
-
-cases = []
-case_id = 1   
+print("======== Sindh Police Station ========")
+cases=[]
+case_id=1
 
 while True:
-    print("\n----- MAIN MENU -----")
-    print("1. Traffic Office")
-    print("2. Crime Office")
-    print("3. Cybercrime Office")
-    print("4. Register a New Case")
-    print("5. View All Cases")
-    print("6. Search Case by ID")
-    print("7. Update Case Status")
-    print("8. Delete a Case")
-    print("9. Exit")
-
-    choice = int(input("Enter your choice (1-9): "))
-
+    print("\n==== How Can I Help You ====")
+    print("1. Traffic Department: ")
+    print("2. Crime Department: ")
+    print("3. Cybercrime Department: ")
+    print("4. Register a New Case: ")
+    print("5. View All Cases: ")
+    print("6. Search Case by ID: ")
+    print("7. Update Case Status: ")
+    print("8. Delete a Case: ")
+    print("9. Exit: ")
+    
+    choice=int(input("Enter Your Option Please Choose Serial no (1-9): "))
+    
     if choice == 1:
-        print("Traffic Office: Handles traffic violations and accidents.")
-
+        print("Traffic Department (Services): Handle Traffic Violation & Accidents.")
     elif choice == 2:
-        print("Crime Office: Handles robbery, theft, and assaults.")
+        print("Crime Department (Services): Handles Robbery, Theft, & Assaults.")
 
     elif choice == 3:
-        print("Cybercrime Office: Handles online fraud and hacking.")
-
+        print("Cybercrime Department (Services): Handles Online Scams, Frauds & Hacking.")  
+        
     elif choice == 4:
         print("Register a New Case")
-        officer = input("Enter Officer Name: ")
-        complainant = input("Enter Complainant Name: ")
+        officer = input("Enter Officer Name You Want to Give Your Case: ")
+        complainant = input("Enter The Name Who is Complaining: ")
         case_type = input("Enter Case Type (Traffic/Crime/Cyber): ")
         details = input("Enter Case Details: ")
 
@@ -41,15 +39,14 @@ while True:
             "Details": details,
             "Status": "Open"
         }
-
         cases.append(case)
-        print("Case registered with ID:", case_id)
+        print("Case registered & Your Id is:", case_id)
         case_id += 1
 
     elif choice == 5:
         print("All Registered Cases:")
         if len(cases) == 0:
-            print("No cases yet.")
+            print("No Cases yet.")
         else:
             for case in cases:
                 print("ID:", case["ID"], 
@@ -58,7 +55,6 @@ while True:
                       "| Type:", case["Type"], 
                       "| Details:", case["Details"], 
                       "| Status:", case["Status"])
-
     elif choice == 6:
         search_id = int(input("Enter Case ID to Search: "))
         found = False
@@ -76,7 +72,7 @@ while True:
             print("Case not found.")
 
     elif choice == 7:
-        update_id = int(input("Enter Case ID to Update: "))
+        update_id = int(input("Enter Your Case ID to Update: "))
         for case in cases:
             if case["ID"] == update_id:
                 print("Current Status:", case["Status"])
@@ -103,3 +99,5 @@ while True:
 
     else:
         print("Invalid choice. Try again.")
+
+
